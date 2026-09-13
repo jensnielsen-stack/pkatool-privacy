@@ -20,6 +20,10 @@
   a { color: #2E7A4D; }
   ul { margin: 1rem 0; padding-left: 1.3rem; }
   li { margin: 0.4rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #e0e0db; }
+  th { color: #666; font-weight: 600; }
+  .pill { background: #fde8e8; color: #a33; padding: 0.1rem 0.5rem; border-radius: 0.7rem; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -37,24 +41,48 @@
   Mobile Ads SDK, to support development. You can remove ads permanently with
   a one-time in-app purchase.</p>
 
-  <p>This SDK, and its consent (UMP) component for the EEA/UK, collects a
-  limited set of technical data to deliver and measure ads and meet legal
-  consent requirements — things like a device advertising identifier,
-  approximate location (from IP address), basic diagnostics, and which ads
-  were shown or interacted with. Google discloses exactly what it collects,
-  and how each item is classified, in its own published data-collection
-  disclosure and privacy policy — see
-  <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Data
-  Google's ad SDK collects</a> and <a href="https://policies.google.com/technologies/partner-sites">
-  Google's privacy policy</a>. We link there rather than re-listing it here so
-  this page can't go out of date if Google's own disclosure changes.</p>
+  <p>Showing ads means Google's SDK collects some data on our behalf. This is
+  the exact list, taken from the SDK's own privacy declaration rather than a
+  general description:</p>
 
-  <p>Of that data, only the device advertising identifier is currently
-  classified as being used to track you across other companies' apps and
-  websites — which is exactly why pKaTool asks for App Tracking Transparency
-  (ATT) permission on first launch. Whichever you choose, ads stay
-  non-personalized either way; declining doesn't remove or degrade
+  <table>
+    <tr><th>Data</th><th>Linked to your identity?</th><th>Used to track you across apps?</th></tr>
+    <tr>
+      <td>Advertising identifier (IDFA)</td>
+      <td>Yes</td>
+      <td><span class="pill">Yes</span></td>
+    </tr>
+    <tr>
+      <td>Ads you've seen (advertising data)</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>How you interact with the app (product interaction)</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Approximate location, from your IP address</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Crash and performance data</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  </table>
+
+  <p>The advertising identifier is the only one of these used to track you
+  across other companies' apps and websites — which is exactly why pKaTool
+  asks for App Tracking Transparency (ATT) permission on first launch. Ads
+  stay non-personalized either way; declining doesn't remove or degrade
   anything.</p>
+
+  <p>If you're in the EU, UK, or Switzerland, Google's consent tool asks for
+  your choice before any of this happens, the first time it's needed, in line
+  with GDPR.</p>
 
   <p>If you purchase Remove Ads, the ad SDK stops making any network requests
   entirely — no ads, no ad-related network activity of any kind.</p>
